@@ -1,0 +1,39 @@
+body{
+    background-color: rgb(125, 125, 125);
+}
+
+div{
+    text-align: center;
+    background-color: black;
+    display: flex;
+    justify-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#operation{
+    background-color: rgb(55, 55, 55);
+    color: rgb(49, 186, 49);
+    border-radius: 18px;
+    width: 60px;
+    height: 60px;
+    font-size: 25px;
+}
+#number{
+    background-color: rgb(55, 55, 55);
+    color: rgb(255, 255, 255);
+    border-radius: 18px;
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+}
+#execute{
+    background-color: rgb(49, 186, 49);
+    color: rgb(255, 255, 255);
+    border-radius: 18px;
+    width: 60px;
+    height: 60px;
+    font-size: 35px;
+}
