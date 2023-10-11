@@ -15,3 +15,13 @@ function calculateResult() {
         document.getElementById('result').value = 'Error';
     }
 }
+
+function clearResult() {
+    currentInput = '';
+    document.getElementById('result').value = '0';
+}
+
+function clearLast() {
+    currentInput = currentInput.slice(0, -1)
+    document.getElementById('result').value = currentInput;
+}
