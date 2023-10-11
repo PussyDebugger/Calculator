@@ -1,39 +1,60 @@
-body{
-    background-color: rgb(125, 125, 125);
-}
-
-div{
-    text-align: center;
-    background-color: black;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
     display: flex;
-    justify-items: center;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-#operation{
-    background-color: rgb(55, 55, 55);
-    color: rgb(49, 186, 49);
-    border-radius: 18px;
-    width: 60px;
-    height: 60px;
-    font-size: 25px;
+.calculator {
+    background-color: #333;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-#number{
-    background-color: rgb(55, 55, 55);
-    color: rgb(255, 255, 255);
-    border-radius: 18px;
-    width: 60px;
-    height: 60px;
-    font-size: 20px;
+
+.display {
+    background-color: #444;
+    border: 1px solid #222;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
 }
-#execute{
-    background-color: rgb(49, 186, 49);
-    color: rgb(255, 255, 255);
-    border-radius: 18px;
-    width: 60px;
-    height: 60px;
-    font-size: 35px;
+
+.display input {
+    box-sizing: border-box;
+    text-align: right;
+    width: 100%;
+    font-size: 24px;
+    padding: 5px;
+    border: none;
+    background-color: #444;
+    color: white;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+#zero {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+button {
+    font-size: 24px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #666;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
 }
