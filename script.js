@@ -11,9 +11,17 @@ function showLine() {
 function appendToResult(value) {
     if (['/', '*', '-', '+'].includes(value) && currentInput === '')
         currentInput = 0
+    if (value === '.' && (currentInput === '' || ['/', '*', '-', '+'].includes(currentInput[currentInput.length - 1]))) {
+        currentInput += '0'
+    }
+    if (['/', '*', '-', '+'].includes(value) && ['/', '*', '-', '+'].includes(currentInput[currentInput.length - 1]))
+        currentInput = currentInput.slice(0, -1);
+    if (['/', '*', '-', '+'].includes(value) && currentInput[currentInput.length - 1] === '.')
+        return;
+    if (value === '.' && currentInput.indexOf('.') !== -1)
+        return;
     currentInput += value;
     showLine();
-    console.log(currentInput)
 }
 
 function calculateResult() {
