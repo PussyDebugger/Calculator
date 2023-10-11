@@ -23,7 +23,10 @@ function clearResult() {
 
 function clearLast() {
     currentInput = currentInput.slice(0, -1)
-    document.getElementById('result').innerHTML = currentInput;
+    if (currentInput === '')
+        document.getElementById('result').innerHTML = '0';
+    else
+        document.getElementById('result').innerHTML = currentInput;
 }
 
 
