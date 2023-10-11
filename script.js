@@ -25,3 +25,16 @@ function clearLast() {
     currentInput = currentInput.slice(0, -1)
     document.getElementById('result').value = currentInput;
 }
+
+
+function changeSign() {
+    if (currentInput === '')
+        currentInput = "-0"
+    else {
+        if (currentInput[0] === '-')
+            currentInput = currentInput.substring(1)
+        else
+            currentInput = `-${currentInput}`
+    }
+    document.getElementById('result').value = currentInput;
+}
