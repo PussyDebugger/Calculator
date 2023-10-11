@@ -18,6 +18,8 @@ function appendToResult(value) {
         currentInput = currentInput.slice(0, -1);
     if (['/', '*', '-', '+'].includes(value) && currentInput[currentInput.length - 1] === '.')
         return;
+    if (value === '.' && currentInput.indexOf('.') !== -1)
+        return;
     currentInput += value;
     showLine();
 }
