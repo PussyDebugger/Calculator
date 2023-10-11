@@ -1,45 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Calculator</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Calculator</title>
 </head>
 <body>
-    <div>
-        <table>
-        <tr>
-            <td><button id="operation">AC</button></td>
-            <td><button id="operation">%</button></td>
-            <td><button id="operation">÷</button></td>
-            <td><button id="operation">√</button></td>
-        </tr>
-        <tr>
-            <td><button id="number">7</button></td>
-            <td><button id="number">8</button></td>
-            <td><button id="number">9</button></td>
-            <td><button id="operation">x</button></td>
-        </tr>
-        <tr>
-            <td><button id="number">4</button></td>
-            <td><button id="number">5</button></td>
-            <td><button id="number">6</button></td>
-            <td><button id="operation">-</button></td>
-        </tr>
-        <tr>
-            <td><button id="number">1</button></td>
-            <td><button id="number">2</button></td>
-            <td><button id="number">3</button></td>
-            <td><button id="operation">+</button></td>
-        </tr>
-        <tr>
-            <td><button id="operation"><<</button></td>
-            <td><button id="number">0</button></td>
-            <td><button id="number">,</button></td>
-            <td><button id="execute">=</button></td>
-        </tr>
-    </table>
+<div class="calculator">
+  <div>
+    <div class="display">
+      <div id="result">0</div>
     </div>
+    <div class="buttons">
+      <button onclick="changeSign()">+/-</button>
+      <button onclick="clearResult()">C</button>
+      <button onclick="clearLast()"><</button>
+      <button onclick="appendToResult('/')">/</button>
+      <button onclick="appendToResult('7')">7</button>
+      <button onclick="appendToResult('8')">8</button>
+      <button onclick="appendToResult('9')">9</button>
+      <button onclick="appendToResult('*')">*</button>
+      <button onclick="appendToResult('4')">4</button>
+      <button onclick="appendToResult('5')">5</button>
+      <button onclick="appendToResult('6')">6</button>
+      <button onclick="appendToResult('-')">-</button>
+      <button onclick="appendToResult('1')">1</button>
+      <button onclick="appendToResult('2')">2</button>
+      <button onclick="appendToResult('3')">3</button>
+      <button onclick="appendToResult('+')">+</button>
+      <button onclick="appendToResult('0')" id="zero">0</button>
+      <button onclick="appendToResult('.')">.</button>
+      <button onclick="calculateResult()">=</button>
+    </div>
+  </div>
+  <div class="history-field">
+    <ul id="history">
+    </ul>
+  </div>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
