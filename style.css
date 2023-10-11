@@ -23,7 +23,7 @@ body {
     margin-bottom: 10px;
 }
 
-.display input {
+.display div {
     box-sizing: border-box;
     text-align: right;
     width: 100%;
