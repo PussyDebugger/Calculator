@@ -9,7 +9,7 @@ body {
 }
 
 .calculator {
-    width: 230px;
+    display: flex;
     background-color: #333;
     border-radius: 8px;
     padding: 20px;
@@ -17,6 +17,7 @@ body {
 }
 
 .display {
+    width: 210px;
     background-color: #444;
     border: 1px solid #222;
     border-radius: 5px;
@@ -34,7 +35,6 @@ body {
     background-color: #444;
     color: white;
     overflow: hidden;
-    direction: rtl;
 }
 
 .buttons {
@@ -60,4 +60,13 @@ button {
 
 button:hover {
     background-color: #555;
+}
+
+.history {
+    width: 210px;
+    background-color: #444;
+    border: 1px solid #222;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 20px;
 }

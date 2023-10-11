@@ -1,17 +1,25 @@
 let currentInput = '';
 
+function showLine() {
+    if (currentInput.length > 15)
+        document.getElementById('result').innerHTML = currentInput.slice(currentInput.length-15);
+    else
+        document.getElementById('result').innerHTML = currentInput;
+}
+
 function appendToResult(value) {
     if (['/', '*', '-', '+'].includes(value) && currentInput === '')
         currentInput = 0
     currentInput += value;
-    document.getElementById('result').innerHTML = currentInput;
+    showLine();
 }
 
 function calculateResult() {
     try {
         currentInput = eval(currentInput).toString();
-        document.getElementById('result').innerHTML = currentInput;
+        showLine();
     } catch (error) {
+        currentInput = ''
         document.getElementById('result').innerHTML = 'Error';
     }
 }
@@ -26,7 +34,7 @@ function clearLast() {
     if (currentInput === '')
         document.getElementById('result').innerHTML = '0';
     else
-        document.getElementById('result').innerHTML = currentInput;
+        showLine();
 }
 
 
@@ -40,6 +48,6 @@ function changeSign() {
             currentInput = currentInput.substring(1)
         else
             currentInput = `-${currentInput}`
-        document.getElementById('result').innerHTML = currentInput;
+        showLine();
     }
 }
