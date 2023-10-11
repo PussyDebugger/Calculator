@@ -9,6 +9,7 @@ body {
 }
 
 .calculator {
+    position: relative;
     display: flex;
     background-color: #333;
     border-radius: 8px;
@@ -62,11 +63,20 @@ button:hover {
     background-color: #555;
 }
 
-.history {
+.history-field {
     width: 210px;
     background-color: #444;
     border: 1px solid #222;
     border-radius: 5px;
     padding: 10px;
     margin-left: 20px;
+}
+
+#history {
+    box-sizing: border-box;
+    font-size: 20px;
+    margin: 0;
+    padding: 5px;
+    color: white;
+    overflow: hidden;
 }

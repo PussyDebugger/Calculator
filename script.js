@@ -1,4 +1,5 @@
 let currentInput = '';
+const history = document.getElementById('history');
 
 function showLine() {
     if (currentInput.length > 15)
@@ -12,10 +13,17 @@ function appendToResult(value) {
         currentInput = 0
     currentInput += value;
     showLine();
+    console.log(currentInput)
 }
 
 function calculateResult() {
     try {
+        const listItem = document.createElement("li");
+        listItem.textContent = `${currentInput}=${eval(currentInput).toString()}`;
+        history.insertBefore(listItem, history.firstChild);
+        if (history.children.length > 12)
+            history.removeChild(history.lastChild)
+
         currentInput = eval(currentInput).toString();
         showLine();
     } catch (error) {
