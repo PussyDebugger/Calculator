@@ -9,17 +9,29 @@ function showLine() {
 }
 
 function appendToResult(value) {
+    // если к пустой строке добавить знак, то перед знаком допишется 0
     if (['/', '*', '-', '+'].includes(value) && currentInput === '')
         currentInput = 0
-    if (value === '.' && (currentInput === '' || ['/', '*', '-', '+'].includes(currentInput[currentInput.length - 1]))) {
+
+    // если поставить точку к пустой строке или сразу после знака, то перед точкой поставится 0
+    if (value === '.' && (currentInput === '' || ['/', '*', '-', '+'].includes(currentInput[currentInput.length - 1])))
         currentInput += '0'
-    }
+
+    // если после знака поставить другой знак, то второй заменит предыдущий
     if (['/', '*', '-', '+'].includes(value) && ['/', '*', '-', '+'].includes(currentInput[currentInput.length - 1]))
         currentInput = currentInput.slice(0, -1);
+
+    // запрет поставить знак сразу после точки
     if (['/', '*', '-', '+'].includes(value) && currentInput[currentInput.length - 1] === '.')
         return;
+
+    // запрет поставить две точки в одном числе
     if (value === '.' && currentInput.slice(currentInput.search(/[+\-*/][0-9]+$/) + 1).indexOf('.') !== -1)
         return;
+
+    // запрет началь целое число с нуля
+    if (value !== '.' && currentInput.slice(currentInput.search(/[+\-*/][0-9]$/) + 1) === '0')
+        currentInput = currentInput.slice(0, -1);
 
     currentInput += value;
     showLine();
